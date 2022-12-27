@@ -28,7 +28,9 @@ app.get('/query', userCtrl.queryUser);
 
 app.get('/count', userCtrl.usersCount);
 
-app.get('/finder', userCtrl.finders)
+app.get('/finder', userCtrl.finders);
+
+app.get('/get-set-virtual', userCtrl.virtualUser)
 
 app.listen(PORT, () => {
     console.log('App will run on: http://localhost:3000');

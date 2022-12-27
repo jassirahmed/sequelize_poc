@@ -78,6 +78,13 @@ const finders = async (req, res) => {
     })
     res.status(200).json({ data: user, created: created })
 }
+
+const virtualUser = async (req, res) => {
+    const data = await User.findAll({
+        where: { lastName: 'Mohd' }
+    })
+    res.status(200).json({ data: data })
+}
 module.exports = {
     addUser,
     getUsers,
@@ -87,5 +94,6 @@ module.exports = {
     updateUser,
     queryUser,
     usersCount,
-    finders
+    finders,
+    virtualUser
 }
